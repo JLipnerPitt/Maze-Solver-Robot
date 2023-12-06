@@ -15,7 +15,7 @@ void Queue::enqueue(int d) {
     front = rear = temp;
   }
   else {
-    rear->next = temp;
+    rear->set_next(temp);
   }
 }
 
@@ -25,7 +25,7 @@ void Queue::dequeue() {
   }
   else {
     Node* temp = front;
-    front = front->next;
+    front = front->get_next();
     if (front = nullptr) {
       rear = nullptr;
     }
@@ -35,5 +35,12 @@ void Queue::dequeue() {
 }
 
 int Queue::peek() {
-  return front->data;
+  return front->get_data();
+}
+
+bool Queue::is_empty() {
+  if (front == nullptr) {
+    return true;
+  }
+  return false;
 }

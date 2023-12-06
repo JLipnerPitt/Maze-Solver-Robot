@@ -1,15 +1,7 @@
 #ifndef QUEUE_
 #define QUEUE_
 
-struct Node {
-  int data;
-  Node* next;
-  Node(int d) 
-  {
-    data = d;
-    next = nullptr;
-  }
-};
+#include "Node.h"
 
 class Queue {
   private:
@@ -22,5 +14,6 @@ class Queue {
     void enqueue(int);
     void dequeue();
     int peek();
+    bool is_empty();
 };
 #endif
