@@ -11,9 +11,9 @@ class Queue {
   public:
     Queue();
     ~Queue();
-    void enqueue(int);
-    void dequeue();
+    void add(const int&);
+    void remove();
     int peek();
-    bool is_empty();
+    bool is_empty() const;
 };
 #endif

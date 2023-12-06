@@ -8,7 +8,7 @@ Queue::~Queue() {
   
 }
 
-void Queue::enqueue(int d) {
+void Queue::add(const int& d) {
   Node* temp = new Node(d);
 
   if (front == nullptr) {
@@ -19,14 +19,14 @@ void Queue::enqueue(int d) {
   }
 }
 
-void Queue::dequeue() {
+void Queue::remove() {
   if (front == nullptr) {
     return;
   }
   else {
     Node* temp = front;
     front = front->get_next();
-    if (front = nullptr) {
+    if (front == nullptr) {
       rear = nullptr;
     }
     delete temp;
@@ -38,7 +38,7 @@ int Queue::peek() {
   return front->get_data();
 }
 
-bool Queue::is_empty() {
+bool Queue::is_empty() const {
   if (front == nullptr) {
     return true;
   }
